@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Meu Blog de Resenhas de Livros</title>
-    <style>
+    <title>Resenhas do coerus</title>
+    <style id="theme-style">
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #D3D3D3;
-            color: #000080;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        h1, h2 {
+        .container {
+            width: 80%;
+            box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
             text-align: center;
-            font-size: 2em;
-            text-shadow: 3px 3px 0 #FF8C00;
+        }
+        h2 {
+            text-align: left;
+            color: #FF0000;
+            text-shadow: 2px 2px #000000;
         }
         .tema {
             margin: 20px 0;
-            border-bottom: 2px dashed #000080;
-        }
-        .tema h2 {
-            text-decoration: none;
+            border-bottom: 2px solid #FFFFFF;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: transparent;
         }
         .livro {
             margin: 10px 0;
-            font-size: 1.5em;
         }
         a {
-            color: #000080;
-            text-decoration: none;
+            color: #FF0000;
+            text-decoration: underline;
+            text-shadow: 2px 2px #000000;
         }
         a:hover {
-            color: #FF8C00;
+            color: #808080;
+        }
+        #theme-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #FFFFFF;
+            color: #000000;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Meu Blog de Resenhas de Livros</h1>
-    <div class="tema">
-        <h2>Tema 1</h2>
-        <div class="livro">
-            <a href="link_para_resenha_do_livro_1">Nome do Livro 1</a>
+    <div class="container">
+        <h1>Resenhas de livros do coerus</h1>
+        <div class="tema">
+            <h2>Tema 1</h2>
+            <div class="livro">
+                <a href="./biografias/respire.html">Respire: Uma vida em movimento - Rickson Gracie</a>
+            </div>
+          
         </div>
-        <div class="livro">
-            <a href="link_para_resenha_do_livro_2">Nome do Livro 2</a>
+        <div class="tema">
+            <h2>Desenvolvimento Pessoal</h2>
+
         </div>
+        <!-- Adicione mais temas e livros conforme necessário -->
     </div>
-    <div class="tema">
-        <h2>Tema 2</h2>
-        <div class="livro">
-            <a href="link_para_resenha_do_livro_3">Nome do Livro 3</a>
-        </div>
-        <div class="livro">
-            <a href="link_para_resenha_do_livro_4">Nome do Livro 4</a>
-        </div>
-    </div>
-    <!-- Adicione mais temas e livros conforme necessário -->
+    <button id="theme-button" onclick="toggleTheme()">Alternar Tema</button>
+    <script>
+        function toggleTheme() {
+            var themeStyle = document.getElementById('theme-style');
+            if (themeStyle.innerHTML.includes('#000000')) {
+                themeStyle.innerHTML = themeStyle.innerHTML.replace('#000000', '#FFFFFF').replace('#FFFFFF', '#000000');
+            } else {
+                themeStyle.innerHTML = themeStyle.innerHTML.replace('#FFFFFF', '#000000').replace('#000000', '#FFFFFF');
+            }
+        }
+    </script>
 </body>
 </html>
-
