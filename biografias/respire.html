@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resenha do Livro - Nome do Livro</title>
+    <style id="theme-style">
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #FF0000;
+            text-shadow: 2px 2px #000000;
+        }
+        h2 {
+            text-align: left;
+            color: #FF0000;
+            text-shadow: 2px 2px #000000;
+        }
+        .livro-info {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: transparent;
+        }
+        .livro {
+            margin: 10px 0;
+        }
+        a {
+            color: #FF0000;
+            text-decoration: underline;
+            text-shadow: 2px 2px #000000;
+        }
+        a:hover {
+            color: #808080;
+        }
+        #theme-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #FFFFFF;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nome do Livro</h1>
+        <div class="livro-info">
+            <h2>Informações do Livro</h2>
+            <p><strong>Autor:</strong> Coerus</p>
+            <p><strong>Data:</strong> Data da Resenha</p>
+            <!-- Adicione mais informações conforme necessário -->
+        </div>
+        <div class="resenha">
+            <h2>Resenha</h2>
+            <p>Escreva sua resenha aqui.</p>
+        </div>
+    </div>
+    <button id="theme-button" onclick="toggleTheme()">Alternar Tema</button>
+    <script>
+        function toggleTheme() {
+            var themeStyle = document.getElementById('theme-style');
+            if (themeStyle.innerHTML.includes('#000000')) {
+                themeStyle.innerHTML = themeStyle.innerHTML.replace('#000000', '#FFFFFF').replace('#FFFFFF', '#000000');
+            } else {
+                themeStyle.innerHTML = themeStyle.innerHTML.replace('#FFFFFF', '#000000').replace('#000000', '#FFFFFF');
+            }
+        }
+    </script>
+</body>
+</html>
